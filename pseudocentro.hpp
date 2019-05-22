@@ -6,15 +6,15 @@
 #include <iostream>
 #include <vector>
 #include "Material/alg_grafoPMC.h"
-#include "Material/grafoPMC.h"
+#include "./Material/grafoPMC.h"
 
 
 template <typename T>
-typename GrafoP<tCoste>::vertice pseudocentro(const typename GrafoP<tCoste>& GrafoP){
+typename GrafoP<T>::vertice pseudocentro(const typename GrafoP<T>& GrafoP){
 
     int i;
     vertice verticeMinimo;
-    tCoste minimo, minimoTemp;
+    typename GrafoP<tCoste>::tCoste minimo, minimoTemp;
     List<tCoste> vectorCosteTemp{GrafoP.numVert()};
 
     minimo = std::numeric_limits<tCoste>::max();
@@ -34,7 +34,7 @@ typename GrafoP<tCoste>::vertice pseudocentro(const typename GrafoP<tCoste>& Gra
 }
 
 template <typename T>
-typename GrafoP<tCoste>::tCoste diametro(const typename GrafoP<tCoste>& GrafoP){
+typename GrafoP<T>::tCoste diametro(const typename GrafoP<T>& GrafoP){
 
     int i;
     tCoste minimo, minimoTemp;

@@ -94,7 +94,7 @@ vector<tCoste> Dijkstra(const GrafoP<tCoste>& G,
 {
    typedef typename GrafoP<tCoste>::vertice vertice;
    vertice v, w;
-   const size_t n = G.numVert();
+   const size_t n = G.numVert();              // Número de vértices.
    vector<bool> S(n, false);                  // Conjunto de vértices vacío.
    vector<tCoste> D;                          // Costes mínimos desde origen.
 
@@ -105,7 +105,7 @@ vector<tCoste> Dijkstra(const GrafoP<tCoste>& G,
 
    // Calcular caminos de coste mínimo hasta cada vértice.
    S[origen] = true;                          // Incluir vértice origen en S.
-   for (size_t i = 1; i <= n-2; i++) {
+   for (size_t i = 1; i <= n-2; i++) {          // nIteraciones = número de vértices -1.
       // Seleccionar vértice w no incluido en S
       // con menor coste desde origen.
       tCoste costeMin = GrafoP<tCoste>::INFINITO;

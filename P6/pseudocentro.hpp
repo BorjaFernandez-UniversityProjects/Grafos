@@ -6,8 +6,8 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include "Material/alg_grafoPMC.h"
-#include "./Material/grafoPMC.h"
+#include "../Material/alg_grafoPMC.h"
+#include "../Material/grafoPMC.h"
 
 
 template <typename T>

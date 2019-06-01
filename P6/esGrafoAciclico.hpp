@@ -1,34 +1,35 @@
+
 #ifndef ES_GRAFO_ACICLICO_HPP
 #define ES_GRAFO_ACICLICO_HPP
 
 #include <vector>
 #include "../Material/grafoPMC.h"
-#include "../Material/listaenla.h"
+#include "../Material/alg_grafo_E-S.h"
 
 template <typename T>
-bool esGrafoAciclico(const GrafoP<T>& GrafoP)
+bool esGrafoAciclico(const GrafoP<T>& Gponderado)
 {
-    vector<bool> visitados{GrafoP.numVert(), false};
-    return !esGrafoAciclico(GrafoP, visitados, 0, -1);
+    vector<bool> visitados(Gponderado.numVert(), false);
+    return !esGrafoCiclico(Gponderado, visitados, 0, 0);
 }
 
 template <typename T>
-bool esGrafoCiclico(const GrafoP<T>& GrafoP, vector<bool>& visitados,
-                    typename GrafoP<T>::vertice vertice, typename GrafoP<T>::vertice verticePadre)
+bool esGrafoCiclico(const GrafoP<T>& Gponderado, vector<bool>& visitados,
+                    typename GrafoP<T>::vertice verticeActual, typename GrafoP<T>::vertice verticePadre)
 {
     bool esCiclico;
-    int i;
-    vector<T> verticesAdyacentes = GrafoP[vertice];
+    typename GrafoP<T>::vertice i;
+    vector<T> verticesAdyacentes = Gponderado[verticeActual];
 
 
-    visitados[vertice] = true;
+    visitados[verticeActual] = true;
     i = 0;
     esCiclico = false;
 
-    while (i < verticesAdyacentes.size() && esCiclico = false)
+    while (i < verticesAdyacentes.size() && esCiclico == false)
     {
         // Si existe un camino hasta el vértice 'i'.
-        if (verticesAdyacentes[i] != 0)
+        if (verticesAdyacentes[i] != GrafoP<T>::INFINITO)
         {
             // Si el vértice 'i' ya ha sido visitado.
             if (visitados[i] == true)
@@ -41,11 +42,12 @@ bool esGrafoCiclico(const GrafoP<T>& GrafoP, vector<bool>& visitados,
             }
             else
             {
-                esCiclico = esGrafoAciclico(GrafoP, visitados, i, vertice);
+                esCiclico = esGrafoCiclico(Gponderado, visitados, i, verticeActual);
             }
         }
         i++;
     }
+    return esCiclico;
 }
 
 

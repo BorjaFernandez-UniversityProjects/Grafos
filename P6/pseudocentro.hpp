@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include "Material/alg_grafoPMC.h"
 #include "./Material/grafoPMC.h"
 
@@ -19,7 +20,7 @@ typename GrafoP<T>::vertice pseudocentro(const typename GrafoP<T>& GrafoP){
 
     minimo = std::numeric_limits<tCoste>::max();
 
-    for(i = 0; i < GrafoP.numVert(); i++){
+    for(i = 0; i < vectorCosteTemp.size(); i++){
 
         vectorCosteTemp = Dijkstra(GrafoP, i, vectorCamino);
         minimoTemp = diametroTemporal(vectorCosteTemp);
@@ -56,7 +57,7 @@ typename GrafoP<T>::tCoste diametro(const typename GrafoP<T>& GrafoP){
 }
 
 template <typename T>
-typename GrafoP<tCoste>::tCoste diametroTemporal(const typename vector<tCoste>& costesVertice){
+typename GrafoP<T>::tCoste diametroTemporal(const typename vector<T>& costesVertice){
 
     int i;
     tCoste primerMayor, segundoMayor, mayorTemporal;

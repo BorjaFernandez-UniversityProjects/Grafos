@@ -9,11 +9,11 @@ template <typename T>
 bool esGrafoAciclico(const GrafoP<T>& GrafoP)
 {
     vector<bool> visitados{GrafoP.numVert(), false};
-    return esGrafoAciclico(GrafoP, visitados, 0, -1);
+    return !esGrafoAciclico(GrafoP, visitados, 0, -1);
 }
 
 template <typename T>
-bool esGrafoAciclico(const GrafoP<T>& GrafoP, vector<bool>& visitados,
+bool esGrafoCiclico(const GrafoP<T>& GrafoP, vector<bool>& visitados,
                     typename GrafoP<T>::vertice vertice, typename GrafoP<T>::vertice verticePadre)
 {
     bool esCiclico;

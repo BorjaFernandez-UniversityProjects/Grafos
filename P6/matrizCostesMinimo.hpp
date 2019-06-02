@@ -153,7 +153,7 @@ matriz<T> matrizCostesMinimos(const GrafoP<T>& Gponderado)
     vector<typename GrafoP<T>::vertice> camino{nVertices};
 
     i = 0;
-    while (i != nVertices)
+    while (i < nVertices)
     {
         matrizCostes[i] = Dijkstra(Gponderado, i, camino);
         i++;

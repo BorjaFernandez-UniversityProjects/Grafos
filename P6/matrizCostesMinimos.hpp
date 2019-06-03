@@ -8,6 +8,8 @@
 #include <vector>
 #include "clonarGrafos.hpp"
 
+/*  Solución al problema 4 de la primera relación de problemas de Grafos    */
+
 
 /**
  * Generalización del problema:

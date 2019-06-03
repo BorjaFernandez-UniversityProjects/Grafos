@@ -10,6 +10,8 @@
 #include "../Material/grafoPMC.h"
 
 
+/*  Solución al problema 2 de la primera relación de problemas de Grafos    */
+
 template <typename T>
 typename GrafoP<T>::vertice pseudocentro(const typename GrafoP<T>& GrafoP){
 

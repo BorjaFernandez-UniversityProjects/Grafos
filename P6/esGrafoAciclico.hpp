@@ -6,6 +6,9 @@
 #include "../Material/grafoPMC.h"
 #include "../Material/alg_grafo_E-S.h"
 
+/*  Solución al problema 3 de la primera relación de problemas de Grafos    */
+
+
 /**
  * Dado que es más sencillo determinar que un grafo sea cíclico, a que
  * no lo sea, la llamada a "esGrafoAciclico()" devolverá el resultado opuesto

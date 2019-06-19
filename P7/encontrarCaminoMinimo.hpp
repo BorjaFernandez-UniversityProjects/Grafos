@@ -28,7 +28,7 @@ vector<typename GrafoP<T>::vertice> encontrarCaminoMinimo(size_t nVertices,
     matriz<T> matrizCostes{nVertices, 1};
     Lista<T>::posicion iteradorLista;
     GrafoP<T> Gauxiliar{nVertices};
-    vector<typename GrafoP<T>::vertice> camino;
+    vector<typename GrafoP<T>::vertice> caminoVertices;
     size_t i;
 
     i = 0;
@@ -58,10 +58,10 @@ vector<typename GrafoP<T>::vertice> encontrarCaminoMinimo(size_t nVertices,
         Gauxiliar[i] = new vector{matrizCostes[i]};
     }
 
-    Dijkstra(Gauxiliar, verticeOrigen, camino);
-    camino = camino(verticeOrigen, verticeDestino, camino);
+    Dijkstra(Gauxiliar, verticeOrigen, caminoVertices);
+    caminoVertices = camino(verticeOrigen, verticeDestino, caminoVertices);
 
-    return camino;
+    return caminoVertices;
 }
                                            
 

@@ -8,7 +8,7 @@
 #include <vector>
 
 
-/*  Solución al problema 3 de la segunda relación de problemas de Grafos    */
+/*  Solución al problema 4 de la segunda relación de problemas de Grafos    */
 
 
 
